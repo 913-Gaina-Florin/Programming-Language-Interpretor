@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxinterpretor.MainWindowController">
+   <top>
+      <ListView fx:id="outputListView" prefHeight="200.0" prefWidth="740.0" BorderPane.alignment="CENTER" />
+   </top>
+   <left>
+      <ListView id="fileTableListView" fx:id="fileTableListView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <TableView id="heapTableTableView" fx:id="heapTableTableView" prefHeight="52.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="addressColumn" prefWidth="60.799928307533264" text="adress" />
+          <TableColumn fx:id="valueColumn" prefWidth="188.79998626708985" text="value" />
+        </columns>
+      </TableView>
+   </right>
+   <bottom>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField id="numberOfProgramStatesField" fx:id="numberOfProgramStatesField" alignment="CENTER" />
+            <ListView id="programStatesListView" fx:id="programStateListView" onMouseClicked="#onListItemSelection" prefHeight="200.0" prefWidth="200.0" />
+            <Button fx:id="oneStepForAllButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#onButtonClick" text="One Step For All" />
+         </children>
+      </VBox>
+   </bottom>
+   <center>
+      <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <items>
+            <TableView fx:id="symbolTableView" prefHeight="41.0" prefWidth="192.0">
+              <columns>
+                <TableColumn fx:id="stringColumn" minWidth="0.0" prefWidth="115.0" text="String" />
+                <TableColumn fx:id="valColumn" minWidth="0.0" prefWidth="420.0" text="Value" />
+              </columns>
+            </TableView>
+            <ListView fx:id="exeStackListView" prefHeight="200.0" prefWidth="200.0" />
+         </items>
+      </SplitPane>
+   </center>
+</BorderPane>
